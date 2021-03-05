@@ -1,0 +1,21 @@
+.navbar{
+    justify-content: space-between;
+}
+.title{
+    font-family: 'Poppins', sans-serif;
+}
+.menu{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+}
+a {
+    padding-right: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: beige;
+}
+
+a:hover{
+    color: aqua;
+    /* font-size: lar   ger; */
+}

@@ -1,0 +1,59 @@
+<div class="container">
+    <br>
+<h2>Create New User</h2>
+<form class="row g-3" [formGroup]="registrationForm" (ngSubmit)="adduser()" > 
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">User Name</label>
+        <input type="text" [class.is-invalid]="UserName.invalid && UserName.touched" formControlName="UserName"  class="form-control" placeholder="Enter Name">
+        <div *ngIf="UserName.invalid && UserName.touched">
+          <small class="text-danger" *ngIf="UserName.errors?.required" >User Name is Required</small>
+          <small class="text-danger" *ngIf="UserName.errors?.maxlength" >User Name should be max 50 characters</small>
+        </div>
+    </div>               
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Email</label>
+        <input type="email" [class.is-invalid]="Email.invalid && Email.touched" formControlName="Email" class="form-control" placeholder="Enter Email">
+        <div *ngIf="Email.invalid && Email.touched">
+            <small class="text-danger" *ngIf="Email.errors?.required" >Email is Required</small>
+            <small class="text-danger" *ngIf="Email.errors?.pattern" >Please enter a valid Email ID</small>
+          </div>
+      </div>
+      
+      <div class="col-md-12"><br></div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Mobile No</label>
+        <input type="text" [class.is-invalid]="Phone.invalid && Phone.touched" name="Phone" formControlName="Phone" class="form-control" id="inputEmail4" placeholder="Enter Phone Number">
+        <div *ngIf="Phone.invalid && Phone.touched">
+            <small class="text-danger" *ngIf="Phone.errors?.required" >Phone No is Required</small>
+            <small class="text-danger" *ngIf="Phone.errors?.pattern" >Please enter a Phone number with 10 digits</small>
+        </div>  
+    </div>
+
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Gender</label>
+        <input type="text" [class.is-invalid]="Gender.invalid && Gender.touched" name="Gender" formControlName="Gender" class="form-control" id="inputPassword4" placeholder="Enter Gender">
+        <div *ngIf="Gender.errors && (Gender.invalid && Gender.touched)">
+          <small class="text-danger" *ngIf="Gender.errors?.required" >Gender Required</small>
+          <small class="text-danger" *ngIf="Gender.errors?.pattern || Gender.errors?.minlength" >Please enter either M or F</small>
+        </div>
+      </div>
+
+      <div class="col-md-12"><br></div>
+
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Age</label>
+        <input type="number" [class.is-invalid]="Age.invalid && Age.touched" name="Age" formControlName="Age" class="form-control" id="inputEmail4" placeholder="Enter Age">
+        <div *ngIf="Age.errors && (Age.invalid && Age.touched)">
+          <small class="text-danger" *ngIf="Age.errors?.required" >Age Name Required</small>
+           <small class="text-danger" *ngIf="Age.errors?.pattern" >Only numbers allowed</small> 
+        </div>
+      </div>
+
+      
+   <div class="col-md-12"><br></div>
+   <button type="submit" class="btn btn-primary btn-lg mx-auto" [disabled]="!registrationForm.valid">Submit</button>
+</form>
+
+   <!-- {{registrationForm.value | json}} -->
+
+</div>

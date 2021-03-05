@@ -1,0 +1,22 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+  }
+
+  .container{
+    margin-top: 2rem;
+  }
+
+  button{
+    transform: scale(0.7);
+  }
+  a{
+    cursor: pointer;
+  }
+  .caption{
+    margin-left: 90px;
+    color: grey;
+  }
